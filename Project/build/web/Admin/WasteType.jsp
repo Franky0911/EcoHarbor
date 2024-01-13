@@ -53,7 +53,7 @@
                 <tr>
                     <td>WasteType Name</td>
                     <td>
-                        <input type="text" name="txtwastetype" placeholder="Enter Waste Type" value="<%=editname%>" required>
+                        <input type="text" name="txtwastetype" placeholder="Enter Waste Type" value="<%=editname%>" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="^[A-Z]+[a-zA-Z ]*$"required>
                         <input type="hidden" name="txtid" value="<%=editid%>">
                     </td>
                 </tr>

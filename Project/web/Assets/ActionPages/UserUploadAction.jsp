@@ -26,6 +26,7 @@
             String field_name = "";
             String file_name = "";
             String ph = "";
+            String pf = "";
 
             String field[] = new String[20];
             String value[] = new String[20];
@@ -90,14 +91,43 @@
                                 out.println(ex);
                             }
                         }
-                        
+                        if (field_name.equals("file_proof")) {
+                            String ext = file_name.substring(file_name.lastIndexOf("."));
+                            //setting path to store image
+                            File proj_path = new File(config.getServletContext().getRealPath("/"));
+                            String file_path = proj_path.getParentFile().getParentFile().getPath() + "\\web\\Assets\\Files\\UserProof\\";
+                            Random r = new Random();
+                            int r_num = r.nextInt(1111) + 999;
+
+                            pf = "UserProof_" + r_num + ext;
+                            //creating a file object
+                            savedFile = new File(file_path + pf);
+                            try {
+                                //writing the file object
+                                f_item.write(savedFile);
+
+                            } catch (Exception ex) {
+                                out.println(ex);
+                            }
+                        }
 
                     }
 
                 }
-
-                String str1 = "insert into tbl_user(user_name,user_contact,user_email,user_gender,user_photo,user_houseno,ward_id,user_address,user_password)"
-                        + "values('" + value[0] + "','" + value[1] + "','" + value[2] + "','" + value[3] + "','" + ph + "','" + value[4] + "','" + value[6] + "','" + value[7] + "','" + value[8] + "')";
+                if(value[8].equals(value[9]))
+                {
+                    String sts = "0";
+                    String sq = "select * from tbl_property where property_no='" + value[4] + "' and ward_id='"+value[6]+"' and property_oname='"+value[0]+"'"; 
+                    ResultSet rs = con.selectCommand(sq);
+                    System.out.println(sq);  
+                    if(rs.next())
+                    {
+                        sts = "1";
+                    }
+                    
+                     
+                String str1 = "insert into tbl_user(user_name,user_contact,user_email,user_gender,user_photo,user_proof,user_propno,ward_id,user_address,user_password,user_status)"
+                        + "values('" + value[0] + "','" + value[1] + "','" + value[2] + "','" + value[3] + "','" + ph + "','"+pf+"','" + value[4] + "','" + value[6] + "','" + value[7] + "','" + value[8] + "','" + sts + "')";
 
                 System.out.println(str1);       
 
@@ -112,7 +142,20 @@
             }, 100);
         </script>
         <%
+                }                    
                 }
+                else
+                {
+                    %>
+                    <script type="text/javascript" >
+                        alert("Password Mismatched..");
+                        setTimeout(function() {
+                        window.location.href = '../../Guest/UserRegistration.jsp'
+                        }, 100);
+                    </script>
+                    <%
+                }
+
             }
 
 

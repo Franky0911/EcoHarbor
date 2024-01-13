@@ -3,7 +3,7 @@
     Created on : Oct 27, 2023, 8:48:30 PM
     Author     : frank
 --%>
-//HAI
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,45 +19,51 @@
                 <tr>
                     <td>Name</td>
                     <td>
-                        <input type="text" name="txtname" placeholder="Enter Name">
+                        <input type="text" name="txtname" placeholder="Enter Name" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$" required>
                     </td>
                 </tr>
                 <tr>
                     <td>Contact</td>
                     <td>
-                        <input type="text" name="txtcontact" placeholder="Enter Contact No">
+                        <input type="text" name="txtcontact" placeholder="Enter Contact No" title="Phone number with 7-9 and remaing 9 digit with 0-9" pattern="[7-9]{1}[0-9]{9}" required>
                     </td>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td>
-                        <input type="email" name="txtemail" placeholder="Enter Email-Id">
+                        <input type="email" name="txtemail" placeholder="Enter Email-Id" required>
                     </td>
                 </tr>
                 <tr>
                     <td>Gender</td>
                     <td>
-                        Male<input type="radio" name="txtmale" value="Male">
-                        Female<input type="radio" name="txtfemale" value="Female">
-                        Others<input type="radio" name="txtothers" value="Others">
+                        Male<input type="radio" name="txtfe" value="Male" required>
+                        Female<input type="radio" name="txtfe" value="Female">
+                        Others<input type="radio" name="txtfe" value="Others">
                     </td>
                 </tr>
                 <tr>
                     <td>Photo</td>
                     <td align="center">
-                        <input type="file" name="file_photo">
+                        <input type="file" name="file_photo" required>
                     </td>   
                 </tr>
                 <tr>
-                    <td>HouseNo</td>
+                    <td>Adhar Proof</td>
+                    <td align="center">
+                        <input type="file" name="file_proof" required>
+                    </td>   
+                </tr>
+                <tr>
+                    <td>Property No</td>
                     <td>
-                        <input type="text" name="txthno"placeholder="Enter HouseNo" >
+                        <input type="text" name="txthno"placeholder="Enter Property No" required>
                     </td>
                 </tr>
                 <tr>
                     <td>Location</td>
                     <td>
-                        <select name="ddlLoc" onchange = "getWard(this.value)"> <!--Here onchange triggers the function getWard()-->
+                        <select name="ddlLoc" onchange = "getWard(this.value)" required> <!--Here onchange triggers the function getWard()-->
                             <option>--select location--</option>
                             <%
                                 String sel = "select*from tbl_location";  /*Here data from table location is fecthed*/
@@ -76,7 +82,7 @@
                 <tr>
                     <td>Ward</td>
                     <td>
-                        <select name="ddlWard" id = "selward"> <!--Here we create an id for the Ward Drop down List -->
+                        <select name="ddlWard" id = "selward" > <!--Here we create an id for the Ward Drop down List -->
                             <option>--select Ward--</option>
                         </select>
                     </td>
@@ -84,19 +90,19 @@
                 <tr>
                     <td>Address</td>
                     <td>
-                        <textarea name="address" placeholder="Enter Address"></textarea>
+                        <textarea name="address" placeholder="Enter Address" required></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td>Password</td>
                     <td>
-                        <input type="password" name="txtpsswd" placeholder="Enter Password">
+                        <input type="password" name="txtpsswd" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     </td>
                 </tr>
                 <tr>
                     <td>Confirm Password</td>
                     <td>
-                        <input type="password" name="txtpsswd" placeholder="ReEnter Password">
+                        <input type="password" name="txtcpsswd" placeholder="ReEnter Password" required>
                     </td>
                 </tr>         
                 <tr>

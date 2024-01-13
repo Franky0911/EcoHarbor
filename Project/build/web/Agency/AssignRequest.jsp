@@ -36,7 +36,7 @@
                 <tr>
                     <td>Quantity</td>
                     <td>
-                        <input type="text" name="txtqnty" placeholder="Enter Quantity">
+                        <input type="text" name="txtqnty" placeholder="Enter Quantity" required>
                     </td>
                 </tr>
                 <tr>
