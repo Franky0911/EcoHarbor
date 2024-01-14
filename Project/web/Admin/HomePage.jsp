@@ -13,5 +13,6 @@
     </head>
     <body>
         <h1>Hello <%=session.getAttribute("adname")%></h1>
+        <a href="Change Password.jsp">CHANGE PASSWORD</a>
     </body>
 </html>

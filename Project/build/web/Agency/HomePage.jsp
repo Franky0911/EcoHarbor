@@ -13,7 +13,8 @@
     </head>
     <body>
         <h1>Hello <%=session.getAttribute("agname")%></h1>
-        <a href="MyProfile.jsp">PROFILE</a>
-        <a href="Edit Profile.jsp">EDIT PROFILE</a>
+        <a href="MyProfile.jsp">PROFILE</a><br>
+        <a href="Edit Profile.jsp">EDIT PROFILE</a><br>
+        <a href="Change Password.jsp">CHANGE PASSWORD</a>
     </body>
 </html>
