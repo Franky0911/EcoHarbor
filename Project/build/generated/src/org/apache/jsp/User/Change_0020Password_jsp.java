@@ -60,13 +60,48 @@ public final class Change_0020Password_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Password</title>\n");
       out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        ");
-
-            
-            
-        
+      out.write("    ");
+  
+       if(request.getParameter("txtupdate")!=null)
+       {      
+        String sq = "select*from tbl_user where user_id ='"+session.getAttribute("uid")+"'";
+        ResultSet rs = con.selectCommand(sq);
+        rs.next();
+        if(request.getParameter("txtpsswd")==rs.getString("user_password"))
+        {
+            if(request.getParameter("txtnpsswd")==request.getParameter("txtrpsswd"))
+            {
+                String uq = "update tbl_user set user_password = '"+request.getParameter("txtnpasswd")+"'where user_id = '"+session.getAttribute("uid")+"'";
+                con.executeCommand(uq);
+                response.sendRedirect("Change Password.jsp");
+            }
+            else
+            {
+                
       out.write("\n");
+      out.write("                    <script>\n");
+      out.write("                        alert(\"New password Mismatched\");\n");
+      out.write("                        window.location=\"Change Password.jsp\";\n");
+      out.write("                    </script>\n");
+      out.write("                ");
+
+            }
+        }
+        else
+        {
+            
+      out.write("\n");
+      out.write("            <script>\n");
+      out.write("                alert(\"Current Password Mismatched\");\n");
+      out.write("                window.location=\"Change Password.jsp\";\n");
+      out.write("            </script>>\n");
+      out.write("            ");
+
+        }
+       }
+    
+      out.write("\n");
+      out.write("    <body>\n");
       out.write("        <form method=\"post\">    \n");
       out.write("    <table border=\"3\" align=\"center\">   \n");
       out.write("    <tr>\n");
@@ -83,7 +118,7 @@ public final class Change_0020Password_jsp extends org.apache.jasper.runtime.Htt
       out.write("    </tr>\n");
       out.write("    <tr>\n");
       out.write("        <td align=\"center\" colspan=\"2\">\n");
-      out.write("         <input type=\"Button\" name=\"txtupdate\" value=\"Update\">\n");
+      out.write("         <input type=\"submit\" name=\"txtupdate\" value=\"Update\">\n");
       out.write("        </td>\n");
       out.write("    </tr>\n");
       out.write("    </table>\n");

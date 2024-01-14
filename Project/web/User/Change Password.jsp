@@ -12,6 +12,40 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Password</title>
     </head>
+    <%  
+       if(request.getParameter("txtupdate")!=null)
+       {      
+        String sq = "select*from tbl_user where user_id ='"+session.getAttribute("uid")+"'";
+        ResultSet rs = con.selectCommand(sq);
+        rs.next();
+        if(request.getParameter("txtpsswd")==rs.getString("user_password"))
+        {
+            if(request.getParameter("txtnpsswd")==request.getParameter("txtrpsswd"))
+            {
+                String uq = "update tbl_user set user_password = '"+request.getParameter("txtnpasswd")+"'where user_id = '"+session.getAttribute("uid")+"'";
+                con.executeCommand(uq);
+            }
+            else
+            {
+                %>
+                    <script>
+                        alert("New password Mismatched");
+                        window.location="Change Password.jsp";
+                    </script>
+                <%
+            }
+        }
+        else
+        {
+            %>
+            <script>
+                alert("Current Password Mismatched");
+                window.location="Change Password.jsp";
+            </script>>
+            <%
+        }
+       }
+    %>
     <body>
         <form method="post">    
     <table border="3" align="center">   
@@ -29,7 +63,7 @@
     </tr>
     <tr>
         <td align="center" colspan="2">
-         <input type="Button" name="txtupdate" value="Update">
+         <input type="submit" name="txtupdate" value="Update">
         </td>
     </tr>
     </table>
