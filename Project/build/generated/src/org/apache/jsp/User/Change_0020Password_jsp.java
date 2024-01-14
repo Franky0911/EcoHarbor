@@ -62,18 +62,23 @@ public final class Change_0020Password_jsp extends org.apache.jasper.runtime.Htt
       out.write("    </head>\n");
       out.write("    ");
   
-       if(request.getParameter("txtupdate")!=null)
-       {      
+        
+       String currentpsswd=request.getParameter("txtpsswd");
+       String newpsswd = request.getParameter("txtnpsswd");
+       String repsswd = request.getParameter("txtrpsswd");
+       String pass ="";    
         String sq = "select*from tbl_user where user_id ='"+session.getAttribute("uid")+"'";
         ResultSet rs = con.selectCommand(sq);
         rs.next();
-        if(request.getParameter("txtpsswd")==rs.getString("user_password"))
+        pass = rs.getString("user_password");
+        if(pass.equals(currentpsswd))
         {
-            if(request.getParameter("txtnpsswd")==request.getParameter("txtrpsswd"))
+            if(newpsswd.equals(repsswd))
             {
+                if(request.getParameter("txtupdate")!=null)
+                {
                 String uq = "update tbl_user set user_password = '"+request.getParameter("txtnpasswd")+"'where user_id = '"+session.getAttribute("uid")+"'";
-                con.executeCommand(uq);
-                response.sendRedirect("Change Password.jsp");
+                con.executeCommand(uq);}
             }
             else
             {
@@ -94,11 +99,10 @@ public final class Change_0020Password_jsp extends org.apache.jasper.runtime.Htt
       out.write("            <script>\n");
       out.write("                alert(\"Current Password Mismatched\");\n");
       out.write("                window.location=\"Change Password.jsp\";\n");
-      out.write("            </script>>\n");
+      out.write("            </script>\n");
       out.write("            ");
 
         }
-       }
     
       out.write("\n");
       out.write("    <body>\n");
