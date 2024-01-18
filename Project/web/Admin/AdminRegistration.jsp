@@ -19,8 +19,27 @@
                 if(request.getParameter("txtpsswd").equals(request.getParameter("txtcpsswd")))
                 {
                  String insqry="insert into tbl_admin(admin_name,admin_email,admin_password)values('"+request.getParameter("txtaname")+"','"+request.getParameter("txtaemail")+"','"+request.getParameter("txtpsswd")+"')";
-                 con.executeCommand(insqry);                    
+                 con.executeCommand(insqry);    
+        %>
+                <script type="text/javascript" >
+                    alert("Upload Successfully..");
+                    setTimeout(function() {
+                    window.location.href = 'AdminRegistration.jsp'
+                    }, 100);
+                </script>
+        <%
                 }
+                else
+                {
+                    %>
+                    <script type="text/javascript" >
+                        alert("Password Mismatched..");
+                        setTimeout(function() {
+                        window.location.href = 'AdminRegistration.jsp'
+                        }, 100);
+                    </script>
+                    <%
+                }    
             }
         %>
         <form method="post">
