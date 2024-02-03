@@ -82,7 +82,7 @@
                 <tr>
                     <td>Ward</td>
                     <td>
-                        <select name="ddlWard" id = "selward" > <!--Here we create an id for the Ward Drop down List -->
+                        <select name="ddlWard" id = "selward" required> <!--Here we create an id for the Ward Drop down List -->
                             <option>--select Ward--</option>
                         </select>
                     </td>

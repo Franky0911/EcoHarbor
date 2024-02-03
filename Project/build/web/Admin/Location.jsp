@@ -68,7 +68,7 @@
                     <th>Location</th>
                     <th>Action</th>
                 </tr>
-                <%
+            <%
             String sq="select * from tbl_location";
             ResultSet rs=con.selectCommand(sq);
             int i=0;

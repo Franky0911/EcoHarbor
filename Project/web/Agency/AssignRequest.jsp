@@ -4,47 +4,53 @@
     Author     : frank
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
-<%@page import="java.sql.ResultSet" %>    
+<%@page import="java.sql.ResultSet" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Assign Request</title>
+        <title>JSP Page</title>
     </head>
     <body>
-        <form method="post">
-            <table border="3" align="center">
+        <form method="POST">
+               <table  border="2" align="center">
                 <tr>
-                    <td>WasteType</td>
-                    <td>
-                        <select name="ddlWaste">
-                            <option>--select Waste Type--</option>
-                            <%
-                                String sq = "select * from tbl_wastetype";
-                                ResultSet rs = con.selectCommand(sq);
-                                while(rs.next())
-                                {
-                            %>
-                                <option value="<%=rs.getString("wastetype_id")%>"><%=rs.getString("wastetype_name")%></option>
-                            <%
-                                }
-                            %>
-                        </select>
-                    </td>
-                </tr>
+                    <th>Sl no</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Property No</th>
+                     <th>Ward No</th>
+                    <th>Location</th>
+                    <th>Waste type</th>
+                     <%
+                    String sel = "select*from tbl_request  w inner join tbl_user l on l.user_id=w.user_id  inner join tbl_ward d on l.ward_id=d.ward_id inner join tbl_location e on d.location_id=e.location_id where request_status =1";
+                    ResultSet rs = con.selectCommand(sel);
+                    int i = 0;
+                    while(rs.next()) {
+                    String selQ = "select * from tbl_requesttype b inner join tbl_wastetype c on b.wastetype_id=c.wastetype_id where request_id='"+rs.getString("request_id")+"'";
+                    ResultSet rs1 = con.selectCommand(selQ);
+                        
+                        i++;
+                %>
                 <tr>
-                    <td>Quantity</td>
-                    <td>
-                        <input type="text" name="txtqnty" placeholder="Enter Quantity" required>
-                    </td>
+                    <td><%=i%></td>
+                    <td><%=rs.getString("user_name")%></td>
+                    <td><%=rs.getString("user_contact")%></td>
+                    <td><%=rs.getString("user_propno")%></td>
+                    <td><%=rs.getString("ward_no")%></td>
+                    <td><%=rs.getString("location_name")%></td>
+                   
+                    <td><%
+                    while(rs1.next())
+                    {
+                        out.println(rs1.getString("wastetype_name")+"<br>");
+                    }
+                    %></td>
                 </tr>
-                <tr>
-                    <td align="center" colspan="2">
-                        <input type="submit" name="txtsave" value="Save">
-                        <input type="reset" name="txtcancel" value="Cancel">
-                    </td>
-                </tr>
+                <%
+                    }
+                %>
             </table>
         </form>
     </body>

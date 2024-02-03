@@ -18,7 +18,7 @@
             {
                     String uq = "update tbl_user set user_name = '"+request.getParameter("txtname")+"',user_contact = '"+request.getParameter("txtcontact")+"',user_email = '"+request.getParameter("txtemail")+"',user_address = '"+request.getParameter("txtaddress")+"'where user_id = '"+session.getAttribute("uid")+"'";
                     con.executeCommand(uq);
-                    response.sendRedirect("Edit Profile.jsp");    
+                    response.sendRedirect("MyProfile.jsp");    
             } 
             String editname="";
             String editcontact="";

@@ -30,7 +30,12 @@
             {
                 String uq = "update tbl_agency set agency_password = '"+request.getParameter("txtnpsswd")+"'where agency_id = '"+session.getAttribute("agid")+"'";
                 con.executeCommand(uq);
-                response.sendRedirect("Change Password.jsp"); 
+    %>
+                <script>
+                        alert("Password Changed");
+                        window.location="../Guest/Login.jsp";
+                </script>
+    <%
             }
             else
             {

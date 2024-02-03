@@ -18,7 +18,7 @@
             {
                     String uq = "update tbl_agency set agency_name = '"+request.getParameter("txtname")+"',agency_contact = '"+request.getParameter("txtcontact")+"',agency_email = '"+request.getParameter("txtemail")+"',agency_address = '"+request.getParameter("txtaddress")+"'where agency_id = '"+session.getAttribute("agid")+"'";
                     con.executeCommand(uq);
-                    response.sendRedirect("Edit Profile.jsp");    
+                    response.sendRedirect("MyProfile.jsp");    
             } 
             String editname="";
             String editcontact="";
