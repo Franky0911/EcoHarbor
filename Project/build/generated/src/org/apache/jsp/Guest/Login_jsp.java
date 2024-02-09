@@ -67,7 +67,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
         {
             String email = request.getParameter("txt_email");
             String password = request.getParameter("txt_password");
-            
+            String sts = "";
             String seladmin = "select * from tbl_admin where admin_email='"+email+"' and admin_password='"+password+"'";
             String selagency = "select * from tbl_agency where agency_email='"+email+"' and agency_password='"+password+"'";
             String selUser = "select * from tbl_user where user_email='"+email+"' and user_password='"+password+"'";
@@ -75,10 +75,48 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
             ResultSet rsAd = con.selectCommand(seladmin);
             ResultSet rsAg = con.selectCommand(selagency);
             if(rsU.next())
-            {
-                session.setAttribute("uid", rsU.getString("user_id"));
-                session.setAttribute("uname", rsU.getString("user_name"));
-                response.sendRedirect("../User/HomePage.jsp");
+            {   
+                sts = rsU.getString("user_status");
+                if(sts == "0")
+                {
+                    
+      out.write("\n");
+      out.write("                    <script>\n");
+      out.write("                        alert(\"Pending Verification\");\n");
+      out.write("                        window.location=\"Login.jsp\";\n");
+      out.write("                    </script>\n");
+      out.write("                    ");
+
+                }
+                else if(sts == "1")
+                {
+                    
+      out.write("\n");
+      out.write("                    <script>\n");
+      out.write("                        alert(\"Pending Verification\");\n");
+      out.write("                        window.location=\"Login.jsp\";\n");
+      out.write("                    </script>\n");
+      out.write("                    ");
+
+                }
+                else if(sts  == "3")
+                {
+                    
+      out.write("\n");
+      out.write("                    <script>\n");
+      out.write("                        alert(\"Registration Rejected\")\n");
+      out.write("                        window.location=\"Login.jsp\";\n");
+      out.write("                    </script>\n");
+      out.write("                    ");
+
+                }
+                else 
+                {
+                    session.setAttribute("uid", rsU.getString("user_id"));
+                    session.setAttribute("uname", rsU.getString("user_name"));
+                    response.sendRedirect("../User/HomePage.jsp");
+                }
+                
             }
             else if(rsAd.next())
             {

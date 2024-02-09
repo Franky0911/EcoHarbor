@@ -12,6 +12,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User Dashboard</title>
     </head>
+    <%
+        int balance = 0;
+        String sel1 = "select*from tbl_user where user_id='"+session.getAttribute("uid")+"'";  
+        ResultSet rsu = con.selectCommand(sel1);
+        if(rsu.next())
+        {
+            balance = rsu.getInt("user_wallet");
+            if(balance == 0)
+            {
+                %>
+                <script>
+                    alert("Payment Required");
+                    window.location=".jsp";
+                </script>
+                <%
+            }
+        }
+    %>
     <body>
         <h1>Hello <%=session.getAttribute("uname")%></h1>
         <a href="MyProfile.jsp">PROFILE</a><br>
