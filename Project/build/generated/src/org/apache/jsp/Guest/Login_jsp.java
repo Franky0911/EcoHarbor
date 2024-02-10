@@ -67,7 +67,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
         {
             String email = request.getParameter("txt_email");
             String password = request.getParameter("txt_password");
-            String sts = "";
+            int sts=0;
             String seladmin = "select * from tbl_admin where admin_email='"+email+"' and admin_password='"+password+"'";
             String selagency = "select * from tbl_agency where agency_email='"+email+"' and agency_password='"+password+"'";
             String selUser = "select * from tbl_user where user_email='"+email+"' and user_password='"+password+"'";
@@ -76,8 +76,8 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
             ResultSet rsAg = con.selectCommand(selagency);
             if(rsU.next())
             {   
-                sts = rsU.getString("user_status");
-                if(sts == "0")
+                sts = rsU.getInt("user_status");
+                if(sts == 0)
                 {
                     
       out.write("\n");
@@ -88,7 +88,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    ");
 
                 }
-                else if(sts == "1")
+                else if(sts == 1)
                 {
                     
       out.write("\n");
@@ -99,7 +99,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    ");
 
                 }
-                else if(sts  == "3")
+                else if(sts  == 3)
                 {
                     
       out.write("\n");

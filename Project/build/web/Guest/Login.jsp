@@ -18,7 +18,7 @@
         {
             String email = request.getParameter("txt_email");
             String password = request.getParameter("txt_password");
-            String sts = "";
+            int sts=0;
             String seladmin = "select * from tbl_admin where admin_email='"+email+"' and admin_password='"+password+"'";
             String selagency = "select * from tbl_agency where agency_email='"+email+"' and agency_password='"+password+"'";
             String selUser = "select * from tbl_user where user_email='"+email+"' and user_password='"+password+"'";
@@ -27,8 +27,8 @@
             ResultSet rsAg = con.selectCommand(selagency);
             if(rsU.next())
             {   
-                sts = rsU.getString("user_status");
-                if(sts == "0")
+                sts = rsU.getInt("user_status");
+                if(sts == 0)
                 {
                     %>
                     <script>
@@ -37,7 +37,7 @@
                     </script>
                     <%
                 }
-                else if(sts == "1")
+                else if(sts == 1)
                 {
                     %>
                     <script>
@@ -46,7 +46,7 @@
                     </script>
                     <%
                 }
-                else if(sts  == "3")
+                else if(sts  == 3)
                 {
                     %>
                     <script>

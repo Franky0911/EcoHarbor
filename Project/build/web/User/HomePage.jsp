@@ -13,6 +13,7 @@
         <title>User Dashboard</title>
     </head>
     <%
+        
         int balance = 0;
         String sel1 = "select*from tbl_user where user_id='"+session.getAttribute("uid")+"'";  
         ResultSet rsu = con.selectCommand(sel1);
@@ -24,7 +25,7 @@
                 %>
                 <script>
                     alert("Payment Required");
-                    window.location=".jsp";
+                    window.location="Payment.jsp";
                 </script>
                 <%
             }
