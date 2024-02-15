@@ -20,7 +20,7 @@
         if(rsu.next())
         {
             balance = rsu.getInt("user_wallet");
-            if(balance == 0)
+            if(balance <= 0)
             {
                 %>
                 <script>
