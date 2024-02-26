@@ -15,6 +15,8 @@
     <body>
         <%
             String req = "";
+            int Wamount = 0;
+            int Samount = 0;
             String clr[] = request.getParameterValues("ddlwst");
             if (request.getParameter("txtsave") != null) {
                 String insqry = "insert into tbl_request(user_id,request_date)values('" + session.getAttribute("uid") + "',curdate())";
@@ -24,10 +26,17 @@
                 rs1.next();
                 req = rs1.getString("id");
                 for (int i = 0; i < clr.length; i++) {
+                    String upq = "select*from tbl_wastetype where wastetype_id = '" + clr[i] + "'";
+                    ResultSet r = con.selectCommand(upq);
+                    r.next();
+                    Wamount = r.getInt("wastetype_rate");
+                    Samount = Samount + Wamount;
                     String iq = "insert into tbl_requesttype(request_id,wastetype_id)values('" + req + "','" + clr[i] + "')";
                     con.executeCommand(iq);
                 }
-                response.sendRedirect("UserRequest.jsp");
+                String uq = "update tbl_request set request_minimumamount = '" + Samount + "' where user_id = '" + session.getAttribute("uid") + "'";
+                con.executeCommand(uq);
+                response.sendRedirect("Payment1.jsp?reqid="+ req +"&Samt=" +Samount);
 
             }
             if (request.getParameter("did") != null) {
@@ -51,8 +60,7 @@
                     }
                 }
             }
-
-
+            
         %>
         <form method="post">
             <table border=2 align="center">
@@ -60,7 +68,7 @@
                     <td>WasteType</td>
                     <td>
                         <select name="ddlwst" multiple>
-                            <%                                String selq = "select*from tbl_wastetype";
+                            <%  String selq = "select*from tbl_wastetype";
                                 ResultSet rs = con.selectCommand(selq);
 
                                 while (rs.next()) {
@@ -88,8 +96,7 @@
                     <td>Request Date</td>
                     <td>Action</td>
                 </tr>
-                <%                                
-                    String in = "select*from tbl_request w inner join tbl_requesttype l on l.request_id=w.request_id inner join tbl_wastetype t on l.wastetype_id = t.wastetype_id where user_id ='" + session.getAttribute("uid") + "'";
+                <%                    String in = "select*from tbl_request w inner join tbl_requesttype l on l.request_id=w.request_id inner join tbl_wastetype t on l.wastetype_id = t.wastetype_id where user_id ='" + session.getAttribute("uid") + "'";
                     ResultSet rs2 = con.selectCommand(in);
                     int i = 0;
 

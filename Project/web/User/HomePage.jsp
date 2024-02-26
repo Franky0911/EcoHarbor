@@ -11,6 +11,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User Dashboard</title>
+        <style> 
+            h4{text-align: right;} 
+        </style> 
     </head>
     <%
         
@@ -33,9 +36,11 @@
     %>
     <body>
         <h1>Hello <%=session.getAttribute("uname")%></h1>
+        <h4>Balance : <%=rsu.getInt("user_wallet")%></h4>
         <a href="MyProfile.jsp">PROFILE</a><br>
         <a href="Edit Profile.jsp">EDIT PROFILE</a><br>
         <a href="Change Password.jsp">CHANGE PASSWORD</a><br>
-        <a href="UserRequest.jsp">REQUEST</a>
+        <a href="UserRequest.jsp">REQUEST</a><br>
+        <a href="RequestView.jsp">REQUEST VIEW</a>
     </body>
 </html>

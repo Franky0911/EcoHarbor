@@ -87,7 +87,7 @@
                     transition: 0.3s;
                     font-size: 20px;
                     pointer-events: none;
-                    border: 1px solid #000000033;
+                    border: 1px solid #000000033; 
                     border-right: none;
                 }
 

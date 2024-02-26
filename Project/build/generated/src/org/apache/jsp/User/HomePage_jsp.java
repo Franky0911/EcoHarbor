@@ -59,16 +59,20 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>User Dashboard</title>\n");
+      out.write("        <style> \n");
+      out.write("            h4{text-align: right;} \n");
+      out.write("        </style> \n");
       out.write("    </head>\n");
       out.write("    ");
 
+        
         int balance = 0;
         String sel1 = "select*from tbl_user where user_id='"+session.getAttribute("uid")+"'";  
         ResultSet rsu = con.selectCommand(sel1);
         if(rsu.next())
         {
             balance = rsu.getInt("user_wallet");
-            if(balance == 0)
+            if(balance <= 0)
             {
                 
       out.write("\n");
@@ -86,10 +90,14 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <h1>Hello ");
       out.print(session.getAttribute("uname"));
       out.write("</h1>\n");
+      out.write("        <h4>Balance : ");
+      out.print(rsu.getInt("user_wallet"));
+      out.write("</h4>\n");
       out.write("        <a href=\"MyProfile.jsp\">PROFILE</a><br>\n");
       out.write("        <a href=\"Edit Profile.jsp\">EDIT PROFILE</a><br>\n");
       out.write("        <a href=\"Change Password.jsp\">CHANGE PASSWORD</a><br>\n");
-      out.write("        <a href=\"UserRequest.jsp\">REQUEST</a>\n");
+      out.write("        <a href=\"UserRequest.jsp\">REQUEST</a><br>\n");
+      out.write("        <a href=\"RequestView.jsp\">REQUEST VIEW</a>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
