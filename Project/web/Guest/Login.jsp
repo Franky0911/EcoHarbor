@@ -12,8 +12,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
     </head>
+    <%@include file="Head.jsp" %>
     <%
-    
+        
         if(request.getParameter("btn_login")!=null)
         {
             String email = request.getParameter("txt_email");
@@ -90,7 +91,7 @@
     %>
     <body>
         <form method="post">
-            <table border="3" align="center">
+            <table >
                 <tr>
                     <td>Email</td>
                     <td><input type="email" name="txt_email" placeholder="Enter email_id" required></td>
@@ -108,4 +109,5 @@
             </table>
         </form>    
     </body>
+    <%@include file="Foot.jsp" %>
 </html>
