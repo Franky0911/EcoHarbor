@@ -27,7 +27,7 @@
   <!-- Main Stylesheet File -->
   <link href="../Assets/Templates/Main/css/style.css" rel="stylesheet">
 
-  <link href="../Assets/Templates/form.css" rel="stylesheet">
+  <link href="../Assets/Templates/Form.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: BizPage
@@ -42,7 +42,7 @@
   <!--==========================
     Header
   ============================-->
-  <header id="header" style="background: black;">
+  <header id="header" >
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
@@ -55,13 +55,21 @@
         <ul class="nav-menu">
             <li class="menu-active"><a href="../index.html">Home</a></li>
             <li><a href="Login.jsp">Login</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contacts">Contact</a></li>
+          <li><a href="../index.html#about">About Us</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#contacts">Contact</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
 
-  <br><br><br><br><br>
-  <div id="tab" align="center">
+
+      <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active" style="background-image: url('../Assets/Templates/Main/img/intro-carousel/e1.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">

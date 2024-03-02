@@ -13,6 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User Registration</title>
     </head>
+    <%@include file="Head.jsp" %>
     <body>
         <form method="post" enctype="multipart/form-data" action="../Assets/ActionPages/UserUploadAction.jsp">
             <table border="3" align="center">
@@ -57,7 +58,7 @@
                 <tr>
                     <td>Property No</td>
                     <td>
-                        <input type="text" name="txthno"placeholder="Enter Property No" required>
+                        <input type="text" name="txtpropno" placeholder="Enter Property No" required>
                     </td>
                 </tr>
                 <tr>
@@ -128,4 +129,5 @@
                             }
 
     </script>
+    <%@include file="Foot.jsp" %>
 </html>

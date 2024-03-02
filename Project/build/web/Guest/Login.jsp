@@ -4,15 +4,17 @@
     Author     : frank
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
-<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="../Assets/Form.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
+        <%@page import="java.sql.ResultSet"%>
+        <title>Login</title>
     </head>
     <%@include file="Head.jsp" %>
+    <body>
     <%
         
         if(request.getParameter("btn_login")!=null)
@@ -89,25 +91,13 @@
         }
     
     %>
-    <body>
-        <form method="post">
-            <table >
-                <tr>
-                    <td>Email</td>
-                    <td><input type="email" name="txt_email" placeholder="Enter email_id" required></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="txt_password" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
-                </tr>    
-                <tr>
-                    <td align="center" colspan="2">
-                        <input type="submit" name="btn_login" value="Login">
-                        <input type="reset" name="txtcancel" value="Cancel">
-                    </td>
-                </tr>   
-            </table>
-        </form>    
+        <form method="POST">
+            <label align="left" style="color: white; font-size: 58px; font-family: serif ">LOGIN</label><br>
+            <input type="email" name="txtmail" placeholder="Enter the email address" required style="width: 300px; height: 40px "><br>
+            <input type="password" name="password" placeholder="Enter password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" style="width: 300px; height: 40px "><br>
+            <input type="submit" value="Login" name="btnsave" style="width: 100px; height: 40px; padding: 10px 20px;">  &nbsp;
+            <input type="reset" value="Cancel" name="btncan" style="width: 100px; height: 40px; padding: 10px 20px;">  
+        </form>
     </body>
     <%@include file="Foot.jsp" %>
 </html>

@@ -1,0 +1,26 @@
+SMAP
+UserRegistration1_jsp.java
+JSP
+*S JSP
+*F
++ 0 UserRegistration1.jsp
+Guest/UserRegistration1.jsp
++ 1 Head.jsp
+Guest/Head.jsp
++ 2 Foot.jsp
+Guest/Foot.jsp
+*L
+1:51
+2:52,9
+3,11:61
+1#1,75:72
+13#0,55:147
+68,6:203
+73:209
+74:210,6
+75:216
+76,2:218
+77,37:220
+1#2,85:257
+113#0,3:342
+*E

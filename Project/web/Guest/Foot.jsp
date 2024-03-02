@@ -1,9 +1,10 @@
-
-<br><br>
-<br>
-<br>
-<br>
-<br>
+    
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- #intro -->
 
 <!--==========================
     Footer
@@ -12,7 +13,7 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
+            
           <div class="col-lg-3 col-md-6 footer-info" style="margin-left: 50px">
             <h3>EcoHarbor</h3>
             <p>EcoHarbor pioneers sustainable waste management solutions tailored for coastal communities, combining advanced technology and community engagement for a cleaner, greener future. Join us in shaping a sustainable tomorrow.</p>
@@ -38,7 +39,7 @@
               <strong>Phone:</strong> 0485 226 0243<br>
               <strong>Email:</strong> avoly.gp.mvpa@gmail.com<br>
             </p>
-
+            
             <div class="social-links">
               <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
               <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -51,7 +52,6 @@
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong>EcoHarbor</strong>. All Rights Reserved
@@ -60,7 +60,7 @@
   </footer><!-- #footer -->
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
+  
   <!-- JavaScript Libraries -->
   <script src="../Assets/Templates/Main/lib/jquery/jquery.min.js"></script>
   <script src="../Assets/Templates/Main/lib/jquery/jquery-migrate.min.js"></script>
