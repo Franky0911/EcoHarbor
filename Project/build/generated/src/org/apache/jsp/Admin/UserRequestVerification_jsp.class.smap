@@ -1,0 +1,27 @@
+SMAP
+UserRequestVerification_jsp.java
+JSP
+*S JSP
+*F
++ 0 UserRequestVerification.jsp
+Admin/UserRequestVerification.jsp
++ 1 Foot.jsp
+Admin/../Guest/Foot.jsp
+*L
+5:50
+6:51,9
+7,129:60
+136,11:190
+146,11:201
+157,7:213
+163,2:220
+165,4:222,3
+169:234,5
+170,2:239
+172,13:242
+184,4:255
+188,2:260
+189,4:262
+1#1,83:266
+192#0,4:349
+*E

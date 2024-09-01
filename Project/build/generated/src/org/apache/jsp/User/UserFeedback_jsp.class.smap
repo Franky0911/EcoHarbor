@@ -1,0 +1,20 @@
+SMAP
+UserFeedback_jsp.java
+JSP
+*S JSP
+*F
++ 0 UserFeedback.jsp
+User/UserFeedback.jsp
++ 1 Foot.jsp
+User/../Guest/Foot.jsp
+*L
+1:50
+2:51,9
+3,156:60
+159,5:217
+163,7:222
+169,2:229
+170,16:231
+1#1,83:247
+185#0,3:330
+*E

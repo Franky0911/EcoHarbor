@@ -8,8 +8,8 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="../Assets/Templates/Main/img/favicon.png" rel="icon">
-  <link href="../Assets/Templates/Main/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../Assets/Templates/Main/img/favicon.jpg" rel="icon">
+  <link href="../Assets/Templates/Main/img/apple-touch-icon.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -46,7 +46,7 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">EcoHarbor</a></h1>
+        <h1><a href="../index.html" class="scrollto">EcoHarbor</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
@@ -54,22 +54,16 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
             <li class="menu-active"><a href="../index.html">Home</a></li>
-            <li><a href="Login.jsp">Login</a></li>
+            <li><a href="Login1.jsp">Login</a></li>
           <li><a href="../index.html#about">About Us</a></li>
           <li><a href="../index.html#services">Services</a></li>
-          <li><a href="../index.html#contacts">Contact</a></li>
+          <li><a href="#contacts">Contact</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
 
-
+  <!--<div id="tab" align="center">-->
       <!--==========================
     Intro Section
   ============================-->
-  <section id="intro">
-    <div class="intro-container">
-        <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active" style="background-image: url('../Assets/Templates/Main/img/intro-carousel/e1.jpg');">
-            <div class="carousel-container">
-              <div class="carousel-content">

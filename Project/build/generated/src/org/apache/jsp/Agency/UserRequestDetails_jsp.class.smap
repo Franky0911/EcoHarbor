@@ -1,0 +1,28 @@
+SMAP
+UserRequestDetails_jsp.java
+JSP
+*S JSP
+*F
++ 0 UserRequestDetails.jsp
+Agency/UserRequestDetails.jsp
++ 1 Foot.jsp
+Agency/../Guest/Foot.jsp
+*L
+5,4:50
+8:53,9
+9,141:62
+150,7:204
+156:211
+157,7:212,3
+164,2:233
+166,13:236
+178:249
+179:250,3
+180:253
+181:254,3
+182,2:257
+184,2:260
+185,5:262
+1#1,83:267
+189#0,4:350
+*E
