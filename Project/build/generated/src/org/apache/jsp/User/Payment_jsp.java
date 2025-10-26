@@ -42,8 +42,9 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write('\n');
-      out.write('\n');
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       DB.ConnectionClass con = null;
       synchronized (_jspx_page_context) {
         con = (DB.ConnectionClass) _jspx_page_context.getAttribute("con", PageContext.PAGE_SCOPE);
@@ -57,7 +58,6 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!DOCTYPE html>\n");
       out.write("    <html lang=\"en\">\n");
       out.write("        <head>\n");
-      out.write("            <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n");
       out.write("            <style>\n");
       out.write("                *{\n");
       out.write("                    margin: 0;\n");
@@ -136,7 +136,7 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    transition: 0.3s;\n");
       out.write("                    font-size: 20px;\n");
       out.write("                    pointer-events: none;\n");
-      out.write("                    border: 1px solid #000000033; \n");
+      out.write("                    border: 1px solid #000000033;\n");
       out.write("                    border-right: none;\n");
       out.write("                }\n");
       out.write("\n");
@@ -221,7 +221,9 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <h4>Amount</h4>\n");
       out.write("                    <div class=\"input-group\">\n");
       out.write("                        <div class=\"input-box\">\n");
-      out.write("                            <input class=\"name\" type=\"number\" name=\"txt_amount\" min=\"500\" value=\"500\" id=\"txtemail\" placeholder=\"Amount\" required=\"required\">\n");
+      out.write("                            <input class=\"name\" type=\"number\" name=\"txt_amount\" value=\"");
+      out.print(Integer.parseInt(request.getParameter("Samt")));
+      out.write("\" id=\"txtemail\" placeholder=\"Amount\" required=\"required\">\n");
       out.write("                            <i class=\"fa fa-rupee-sign icon\" aria-hidden=\"true\"></i>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\t\n");
@@ -265,22 +267,13 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        ");
 
-
-            if (request.getParameter("btn_pay") != null) {
-                int amount = Integer.parseInt(request.getParameter("txt_amount"));
-                int cAmount = 0;
-                String sel1 = "select*from tbl_user where user_id='" + session.getAttribute("uid") + "'";
-                ResultSet rsu = con.selectCommand(sel1);
-                if (rsu.next()) {
-                    cAmount = rsu.getInt("user_wallet");
-                }
-                
-                int balAmount = amount + cAmount;
-
-                String upQry = "update tbl_user set user_wallet='" + balAmount + "' where user_id='" + session.getAttribute("uid") + "'";
-                if (con.executeCommand(upQry)) {
-                String insqry = "insert into tbl_transaction (transaction_date, transaction_type, transaction_amount, user_id) values ( curdate(), '" + "Wallet Amount" + "', " + amount + ", '" + session.getAttribute("uid") + "')";
-                con.executeCommand(insqry);    
+            String sts = "";
+            if (request.getParameter("btn_pay") != null) 
+            {
+                sts = "1";
+                String upq = "update tbl_request set request_status = '"+sts+"' where request_id = '"+request.getParameter("reqid")+"'";
+                con.executeCommand(upq);
+                {
         
       out.write("\n");
       out.write("        <script type=\"text/javascript\" >\n");

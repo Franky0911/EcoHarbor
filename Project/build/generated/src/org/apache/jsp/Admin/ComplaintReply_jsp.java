@@ -382,7 +382,7 @@ public final class ComplaintReply_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        </div>\n");
       out.write("        <div class=\"formbold-mb-3\">\n");
       out.write("            <label class=\"formbold-form-label\"> Reply</label>\n");
-      out.write("            <textarea name=\"reply_content\" class=\"formbold-form-input\" rows=\"6\" cols=\"20\"></textarea>\n");
+      out.write("            <textarea name=\"reply_content\" class=\"formbold-form-input\" rows=\"6\" cols=\"20\" required></textarea>\n");
       out.write("        </div>\n");
       out.write("        <div class=\"button-container\">   \n");
       out.write("                        <input type=\"submit\" class=\"formbold-btn\" name=\"btn_submit\" value=\"Register\">\n");

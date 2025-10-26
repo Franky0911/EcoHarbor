@@ -47,6 +47,7 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write(' ');
       out.write('\n');
       DB.ConnectionClass con = null;
       synchronized (_jspx_page_context) {
@@ -234,7 +235,7 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\n");
       out.write("    <div class=\"formbold-main-wrapper\">\n");
       out.write("      <div class=\"formbold-form-wrapper\">\n");
-      out.write("        <form method=\"POST\" enctype=\"multipart/form-data\" action=\"../Assets/ActionPages/AgencyUploadAction.jsp\">    \n");
+      out.write("        <form method=\"POST\" action=\"AdminRegistration.jsp\">    \n");
       out.write("          <div class=\"formbold-form-title\">\n");
       out.write("            <h2 align=\"center\">ADMIN REGISTRATION</h2>\n");
       out.write("          </div>  \n");
@@ -251,22 +252,7 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("          </div> \n");
       out.write("          <div class=\"formbold-mb-3\">\n");
       out.write("            <input type=\"password\" class=\"formbold-form-input\" placeholder=\"Confirm Password\" name=\"txtcpsswd\" required/>\n");
-      out.write("          </div>   \n");
-      out.write("          <div class=\"formbold-checkbox-wrapper\">\n");
-      out.write("            <label for=\"supportCheckbox\" class=\"formbold-checkbox-label\">\n");
-      out.write("              <div class=\"formbold-relative\">\n");
-      out.write("                <input type=\"checkbox\" id=\"supportCheckbox\" class=\"formbold-input-checkbox\"/>\n");
-      out.write("                <div class=\"formbold-checkbox-inner\">\n");
-      out.write("                  <span class=\"formbold-opacity-0\">\n");
-      out.write("                    <svg width=\"11\" height=\"8\" viewBox=\"0 0 11 8\" fill=\"none\" class=\"formbold-stroke-current\">\n");
-      out.write("                      <path d=\"M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z\" stroke-width=\"0.4\"></path>\n");
-      out.write("                    </svg>\n");
-      out.write("                  </span>\n");
-      out.write("                </div>\n");
-      out.write("              </div>\n");
-      out.write("              <span>I agree to the defined</span> <a href=\"#\"> terms, conditions, and policies</a>\n");
-      out.write("            </label>\n");
-      out.write("          </div>   \n");
+      out.write("          </div>      \n");
       out.write("          <div class=\"button-container\">   \n");
       out.write("            <input type=\"submit\" class=\"formbold-btn\" name=\"txtsave\" value=\"Register\">\n");
       out.write("            <input type=\"reset\" class=\"formbold-btn\" name=\"txtreset\" value=\"Reset\"> \n");
@@ -275,7 +261,7 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("      </div>\n");
       out.write("    </div>        \n");
       out.write("      ");
-      out.write("</div>\n");
+      out.write("        </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("      </div>\n");
@@ -299,10 +285,9 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            <h4>Useful Links</h4>\n");
       out.write("            <ul>\n");
       out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"#intro\">Home</a></li>\n");
-      out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"#about\">About us</a></li>\n");
-      out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"#services\">Services</a></li>\n");
-      out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"#call-to-action\">Call to action</a></li>\n");
-      out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"#facts\">Facts</a></li>\n");
+      out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"../index.html#about\">About us</a></li>\n");
+      out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"../index.html#services\">Services</a></li>\n");
+      out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"../index.html#call-to-action\">Call to action</a></li>\n");
       out.write("            </ul>\n");
       out.write("          </div>\n");
       out.write("\n");

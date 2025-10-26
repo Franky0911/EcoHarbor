@@ -133,7 +133,7 @@
         <script type="text/javascript" >
             alert("Upload Successfully..");
             setTimeout(function() {
-                window.location.href = '../../Guest/Login1.jsp'
+                window.location.href = '../../Admin/HomePage.jsp'
             }, 100);
         </script>
         <%
@@ -145,7 +145,7 @@
         <script type="text/javascript" >
             alert("Password Mismatched..");
             setTimeout(function() {
-                window.location.href = '../../Guest/AgencyRegistration.jsp'
+                window.location.href = '../../Admin/AgencyRegistration.jsp'
             }, 100);
         </script>
         <%

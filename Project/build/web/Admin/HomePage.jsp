@@ -3,26 +3,6 @@
     Created on : Jan 12, 2024, 2:24:18 PM
     Author     : frank
 --%>
-
-<!--<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello <%=session.getAttribute("adname")%></h1>
-        <a href="Location.jsp">LOCATION ENTRY</a><br>
-        <a href="Property.jsp">PROPERTY ENTRY</a><br>
-        <a href="Ward.jsp">WARD ENTRY</a><br>
-        <a href="WasteType.jsp">WASTETYPES ENTRY</a><br>
-        <a href="Change Password.jsp">CHANGE PASSWORD</a><br>
-        <a href="UserVerification.jsp">USER VERIFICATION</a><br>
-        <a href="UserRequestVerification.jsp">USER REQUEST VERIFICATION</a><br>
-        <a href="TransactionHistory.jsp">ALL TRANSACTIONS</a><br>
-        <a href="ViewFeedback.jsp">FEEDBACK VIEW</a><br>
-        <a href="ViewComplaint.jsp">COMPLAINT VIEW</a>
-    </body>
-</html>-->
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page  import = "java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

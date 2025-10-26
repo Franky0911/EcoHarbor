@@ -1,15 +1,15 @@
 <%-- 
-    Document   : Payment
-    Created on : Feb 9, 2024, 3:21:19 PM
+    Document   : Payment1
+    Created on : Feb 22, 2024, 10:47:47 AM
     Author     : frank
 --%>
+
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 
     <!DOCTYPE html>
     <html lang="en">
         <head>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <style>
                 *{
                     margin: 0;
@@ -88,7 +88,7 @@
                     transition: 0.3s;
                     font-size: 20px;
                     pointer-events: none;
-                    border: 1px solid #000000033; 
+                    border: 1px solid #000000033;
                     border-right: none;
                 }
 
@@ -173,7 +173,7 @@
                     <h4>Amount</h4>
                     <div class="input-group">
                         <div class="input-box">
-                            <input class="name" type="number" name="txt_amount" min="500" value="500" id="txtemail" placeholder="Amount" required="required">
+                            <input class="name" type="number" name="txt_amount" value="<%=Integer.parseInt(request.getParameter("Samt"))%>" id="txtemail" placeholder="Amount" required="required">
                             <i class="fa fa-rupee-sign icon" aria-hidden="true"></i>
                         </div>
                     </div>	
@@ -216,22 +216,13 @@
             </div>
 
         <%
-
-            if (request.getParameter("btn_pay") != null) {
-                int amount = Integer.parseInt(request.getParameter("txt_amount"));
-                int cAmount = 0;
-                String sel1 = "select*from tbl_user where user_id='" + session.getAttribute("uid") + "'";
-                ResultSet rsu = con.selectCommand(sel1);
-                if (rsu.next()) {
-                    cAmount = rsu.getInt("user_wallet");
-                }
-                
-                int balAmount = amount + cAmount;
-
-                String upQry = "update tbl_user set user_wallet='" + balAmount + "' where user_id='" + session.getAttribute("uid") + "'";
-                if (con.executeCommand(upQry)) {
-                String insqry = "insert into tbl_transaction (transaction_date, transaction_type, transaction_amount, user_id) values ( curdate(), '" + "Wallet Amount" + "', " + amount + ", '" + session.getAttribute("uid") + "')";
-                con.executeCommand(insqry);    
+            String sts = "";
+            if (request.getParameter("btn_pay") != null) 
+            {
+                sts = "1";
+                String upq = "update tbl_request set request_status = '"+sts+"' where request_id = '"+request.getParameter("reqid")+"'";
+                con.executeCommand(upq);
+                {
         %>
         <script type="text/javascript" >
             alert("Payment Completed");

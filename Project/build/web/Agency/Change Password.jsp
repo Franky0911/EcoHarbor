@@ -146,7 +146,7 @@
     %>
                 <script>
                         alert("Password Changed");
-                        window.location="../Guest/Login.jsp";
+                        window.location="../Guest/Login1.jsp";
                 </script>
     <%
             }

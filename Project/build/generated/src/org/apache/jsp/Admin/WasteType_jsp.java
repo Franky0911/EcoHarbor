@@ -344,7 +344,7 @@ public final class WasteType_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                    <div class=\"button-container\">\n");
       out.write("                        <input type=\"submit\" class=\"formbold-btn\" name=\"txtsave\" value=\"Save\">\n");
-      out.write("                        <input type=\"submit\"  class=\"formbold-btn\" name=\"txtcancel\" value=\"cancel\">\n");
+      out.write("                        <input type=\"reset\"  class=\"formbold-btn\" name=\"txtcancel\" value=\"cancel\">\n");
       out.write("                    </div>\n");
       out.write("        </form> \n");
       out.write("        </div>        \n");
@@ -418,7 +418,6 @@ public final class WasteType_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"../index.html#about\">About us</a></li>\n");
       out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"../index.html#services\">Services</a></li>\n");
       out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"../index.html#call-to-action\">Call to action</a></li>\n");
-      out.write("              <li><i class=\"ion-ios-arrow-right\"></i> <a href=\"../index.html#facts\">Facts</a></li>\n");
       out.write("            </ul>\n");
       out.write("          </div>\n");
       out.write("\n");
